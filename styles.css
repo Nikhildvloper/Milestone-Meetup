@@ -1,64 +1,51 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(to bottom, #6a11cb, #2575fc);
-  color: #fff;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.container {
-  max-width: 800px;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-
-.subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-}
-
 .timer {
   display: flex;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 5px; /* Small gap between boxes */
+  max-width: 100%; /* Ensure timer stays within screen width */
+  padding: 0 10px; /* Add padding to prevent cutting on the sides */
+  box-sizing: border-box;
 }
 
 .time-box {
   background: #fff;
   color: #333;
-  padding: 5px 10px;
+  padding: 5px 8px; /* Minimal padding */
   border-radius: 4px;
-  min-width: 60px;
+  width: 60px; /* Set a fixed small width */
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .time-box span {
   display: block;
-  font-size: 1.2rem;
+  font-size: 1.2rem; /* Smaller font size */
   font-weight: bold;
 }
 
 .time-box p {
-  font-size: 0.7rem;
+  font-size: 0.7rem; /* Smaller font for labels */
   margin: 0;
 }
 
 .separator {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: #fff;
+}
+
+/* Ensure everything scales for smaller screens */
+@media (max-width: 600px) {
+  .time-box {
+    width: 50px; /* Reduce box width further for very small screens */
+    padding: 4px 6px;
+  }
+  .timer {
+    gap: 3px; /* Reduce gaps on smaller screens */
+  }
+  .separator {
+    font-size: 1rem;
+  }
 }
